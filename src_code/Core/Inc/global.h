@@ -10,9 +10,9 @@
 
 #include "main.h"
 #include "software_timer.h"
-#include "display7SEG.h"
 #include "button.h"
 #include "physical.h"
+#include "scheduler.h"
 
 //fsm
 #define INIT 0
@@ -36,11 +36,8 @@ extern int y_inc;
 
 extern int toogleFlag;
 //7seg
-extern int led_buffer[4];
-extern int index_led;
 extern int timerRoad1;
 extern int timerRoad2;
 
-void updateLedBuffer();
 
 #endif /* INC_GLOBAL_H_ */
