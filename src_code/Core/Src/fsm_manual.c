@@ -89,16 +89,8 @@ void fsm_manual_run(){
 			g_val = r_val-y_val;
 			timerRoad1 = r_val;
 			timerRoad2 = g_val;
-			updateLedBuffer();
 			setTimer1(g_val*100);
 			setTimer2(100);
-
-			//to display new value of 7SEG
-			setTimer4(1);
-			index_led=0;
-			//
-			clearSignal();
-
 		}
 		if (isButtonPressed(2) == 1){
 			g_val=g_inc;

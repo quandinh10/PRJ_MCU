@@ -35,7 +35,7 @@ void getKeyInput(){
 		KeyReg2[i] = KeyReg1[i];
 		KeyReg1[i] = KeyReg0[i];
 		//Add your button here
-		KeyReg0[i] = HAL_GPIO_ReadPin(port_mode, pin_mode);
+		KeyReg0[i] = HAL_GPIO_ReadPin(port_mode[i], pin_mode[i]);
 
 		if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){ //avoid noise
 			if (KeyReg2[i] != KeyReg3[i]){ //change state
