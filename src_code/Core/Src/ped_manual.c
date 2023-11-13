@@ -21,6 +21,10 @@ void pedestrian_manual_fsm(){
 		}
 		break;
 	case GREEN_PED_MAN:
+		if (led_status == GREEN_MAN || led_status == RED_MAN || led_status == YELLOW_MAN){
+			sig = WAIT;
+			break;
+		}
 		pedGreen();
 		onRED1();
 		onGREEN2();
@@ -30,6 +34,10 @@ void pedestrian_manual_fsm(){
 		}
 		break;
 	case RED_PED_MAN:
+		if (led_status == GREEN_MAN || led_status == RED_MAN || led_status == YELLOW_MAN){
+			sig = WAIT;
+			break;
+		}
 		offALL();
 		pedRed();
 		sig = WAIT;
