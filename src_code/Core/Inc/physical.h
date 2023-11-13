@@ -20,4 +20,7 @@ void onGREEN2();
 
 void offALL();
 
+void pedGreen();
+void pedRed();
+
 #endif /* INC_PHYSICAL_H_ */

@@ -25,6 +25,8 @@
 #include "global.h"
 #include "fsm_traffic_light.h"
 #include "fsm_manual.h"
+#include "ped_fsm.h"
+#include "ped_manual.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,9 +103,17 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
   SCH_Init();
+<<<<<<< HEAD
 //  SCH_Add_Task(fsm_traffic_light, 0, 10);
 //  SCH_Add_Task(fsm_manual_run, 0, 10);
   SCH_Add_Task(getKeyInput, 0, 10);
+=======
+  SCH_Add_Task(fsm_traffic_light, 0, 10);
+  SCH_Add_Task(fsm_manual_run, 0, 10);
+  SCH_Add_Task(ped_fsm, 0, 10);
+  SCH_Add_Task(pedestrian_manual_fsm, 0, 10);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+>>>>>>> 35b131675f4ad3c2df86128783e8189c64ed318f
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,11 +121,22 @@ int main(void)
   while (1)
   {
 	  SCH_Dispatch_Tasks();
+<<<<<<< HEAD
 	  if (isButtonPressed(0) == 1){
 		  onRED1();
 		  onRED2();
 	  }
 
+=======
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
+	  HAL_Delay(1000);
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
+	  HAL_Delay(1000);
+
+
+//	  onYELLOW1();
+//	  onYELLOW2();
+>>>>>>> 35b131675f4ad3c2df86128783e8189c64ed318f
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -222,9 +243,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 7999;
+  htim3.Init.Prescaler = 63;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 9;
+  htim3.Init.Period = 999;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)

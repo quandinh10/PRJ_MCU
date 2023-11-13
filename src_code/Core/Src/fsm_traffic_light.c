@@ -7,6 +7,7 @@
 
 #include "fsm_traffic_light.h"
 
+// Allowed signal
 
 void fsm_traffic_light(){
 	switch(led_status){
@@ -21,8 +22,10 @@ void fsm_traffic_light(){
 		break;
 	case RED_GREEN:
 		//TODO
-		onRED1();
-		onGREEN2();
+		if (allowed){
+			onRED1();
+			onGREEN2();
+		}
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -40,8 +43,10 @@ void fsm_traffic_light(){
 		break;
 	case RED_YELLOW:
 		//TODO
-		onRED1();
-		onYELLOW2();
+		if (allowed){
+			onRED1();
+			onYELLOW2();
+		}
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -59,8 +64,10 @@ void fsm_traffic_light(){
 		}
 		break;
 	case GREEN_RED:
-		onGREEN1();
-		onRED2();
+		if (allowed){
+			onGREEN1();
+			onRED2();
+		}
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -77,8 +84,10 @@ void fsm_traffic_light(){
 		}
 		break;
 	case YELLOW_RED:
-		onYELLOW1();
-		onRED2();
+		if (allowed){
+			onYELLOW1();
+			onRED2();
+		}
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){

@@ -52,5 +52,10 @@ dkms.conf
 
 /src_code/Debug
 *.pdsbak
+<<<<<<< HEAD
 .settings/
 .metadata/
+=======
+
+.metadata/
+>>>>>>> 35b131675f4ad3c2df86128783e8189c64ed318f

@@ -39,3 +39,12 @@ void offALL(){
 	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, SET);
 	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, SET);
 };
+
+//PED
+void pedGreen(){
+	HAL_GPIO_WritePin(PET_LED_GPIO_Port, PET_LED_Pin, RESET);
+};
+
+void pedRed(){
+	HAL_GPIO_WritePin(PET_LED_GPIO_Port, PET_LED_Pin, RESET);
+};
