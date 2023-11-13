@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-//branch THINH
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "global.h"
@@ -103,6 +103,7 @@ int main(void)
   SCH_Init();
   SCH_Add_Task(fsm_traffic_light, 0, 10);
   SCH_Add_Task(fsm_manual_run, 0, 10);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -110,6 +111,11 @@ int main(void)
   while (1)
   {
 	  SCH_Dispatch_Tasks();
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
+	  HAL_Delay(1000);
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
+	  HAL_Delay(1000);
+
 //	  onYELLOW1();
 //	  onYELLOW2();
     /* USER CODE END WHILE */
@@ -218,9 +224,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 7999;
+  htim3.Init.Prescaler = 63;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 9;
+  htim3.Init.Period = 999;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
