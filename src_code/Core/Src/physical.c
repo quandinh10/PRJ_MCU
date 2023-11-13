@@ -42,9 +42,11 @@ void offALL(){
 
 //PED
 void pedGreen(){
-	HAL_GPIO_WritePin(PET_LED_GPIO_Port, PET_LED_Pin, RESET);
+	HAL_GPIO_WritePin(PET_LED_1_GPIO_Port, PET_LED_1_Pin, RESET);
+	HAL_GPIO_WritePin(PET_LED_1_GPIO_Port, PET_LED_1_Pin, SET);
 };
 
 void pedRed(){
-	HAL_GPIO_WritePin(PET_LED_GPIO_Port, PET_LED_Pin, RESET);
+	HAL_GPIO_WritePin(PET_LED_1_GPIO_Port, PET_LED_1_Pin, SET);
+	HAL_GPIO_WritePin(PET_LED_2_GPIO_Port, PET_LED_2_Pin, RESET);
 };

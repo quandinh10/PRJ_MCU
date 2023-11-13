@@ -103,17 +103,13 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
   SCH_Init();
-<<<<<<< HEAD
-//  SCH_Add_Task(fsm_traffic_light, 0, 10);
-//  SCH_Add_Task(fsm_manual_run, 0, 10);
-  SCH_Add_Task(getKeyInput, 0, 10);
-=======
   SCH_Add_Task(fsm_traffic_light, 0, 10);
   SCH_Add_Task(fsm_manual_run, 0, 10);
+  SCH_Add_Task(getKeyInput, 0, 10);
+
   SCH_Add_Task(ped_fsm, 0, 10);
   SCH_Add_Task(pedestrian_manual_fsm, 0, 10);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
->>>>>>> 35b131675f4ad3c2df86128783e8189c64ed318f
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -121,22 +117,15 @@ int main(void)
   while (1)
   {
 	  SCH_Dispatch_Tasks();
-<<<<<<< HEAD
 	  if (isButtonPressed(0) == 1){
 		  onRED1();
 		  onRED2();
 	  }
 
-=======
 	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
 	  HAL_Delay(1000);
 	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
 	  HAL_Delay(1000);
-
-
-//	  onYELLOW1();
-//	  onYELLOW2();
->>>>>>> 35b131675f4ad3c2df86128783e8189c64ed318f
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
