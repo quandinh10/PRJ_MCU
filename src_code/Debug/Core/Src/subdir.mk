@@ -10,6 +10,8 @@ C_SRCS += \
 ../Core/Src/fsm_traffic_light.c \
 ../Core/Src/global.c \
 ../Core/Src/main.c \
+../Core/Src/ped_fsm.c \
+../Core/Src/ped_manual.c \
 ../Core/Src/physical.c \
 ../Core/Src/scheduler.c \
 ../Core/Src/software_timer.c \
@@ -25,6 +27,8 @@ OBJS += \
 ./Core/Src/fsm_traffic_light.o \
 ./Core/Src/global.o \
 ./Core/Src/main.o \
+./Core/Src/ped_fsm.o \
+./Core/Src/ped_manual.o \
 ./Core/Src/physical.o \
 ./Core/Src/scheduler.o \
 ./Core/Src/software_timer.o \
@@ -40,6 +44,8 @@ C_DEPS += \
 ./Core/Src/fsm_traffic_light.d \
 ./Core/Src/global.d \
 ./Core/Src/main.d \
+./Core/Src/ped_fsm.d \
+./Core/Src/ped_manual.d \
 ./Core/Src/physical.d \
 ./Core/Src/scheduler.d \
 ./Core/Src/software_timer.d \

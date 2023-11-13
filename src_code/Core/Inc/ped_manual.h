@@ -11,7 +11,7 @@
 
 #include "global.h"
 
-void pedestrian_light_fsm();
+void pedestrian_manual_fsm();
 
 
 

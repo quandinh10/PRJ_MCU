@@ -27,6 +27,9 @@
 
 #define RED 15
 #define GREEN 16
+#define RED_PED_MAN 17
+#define GREEN_PED_MAN 18
+#define WAIT 19
 
 extern int led_status;
 extern int r_val;
@@ -42,7 +45,10 @@ extern int toogleFlag;
 extern int timerRoad1;
 extern int timerRoad2;
 
+//ped purpose
 extern int allowed;
+extern int sig;
+
 
 
 #endif /* INC_GLOBAL_H_ */

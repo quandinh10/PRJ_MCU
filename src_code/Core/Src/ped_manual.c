@@ -20,18 +20,17 @@ void pedestrian_manual_fsm(){
 			setTimer8(1000);
 		}
 		break;
-	case GREEN:
+	case GREEN_PED_MAN:
 		pedGreen();
-		onRed1();
-		onGreen2();
+		onRED1();
+		onGREEN2();
 		if (timer8_flag){
 			sig = RED;
 			allowed = 1;
 		}
 		break;
-	case RED:
-		offRed1();
-		offGreen2();
+	case RED_PED_MAN:
+		offALL();
 		pedRed();
 		sig = WAIT;
 		break;

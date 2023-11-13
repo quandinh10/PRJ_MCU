@@ -21,6 +21,6 @@ int g_inc=0;
 int y_inc=0;
 
 int toogleFlag=0;
+
 int allowed = 1;
-
-
+int sig = -1;

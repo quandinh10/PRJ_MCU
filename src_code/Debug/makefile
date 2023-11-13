@@ -64,8 +64,8 @@ all: main-build
 main-build: project_MCU.elf secondary-outputs
 
 # Tool invocations
-project_MCU.elf: $(OBJS) $(USER_OBJS) C:\Users\takudo\PRJ_MCU\src_code\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "project_MCU.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\takudo\PRJ_MCU\src_code\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_MCU.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+project_MCU.elf: $(OBJS) $(USER_OBJS) C:\Users\Admin\OneDrive\ -\ hcmut.edu.vn\Giáo\ trình\MCU\PRJ_MCU\src_code\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "project_MCU.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Admin\OneDrive - hcmut.edu.vn\Giáo trình\MCU\PRJ_MCU\src_code\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_MCU.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

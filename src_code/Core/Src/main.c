@@ -25,6 +25,8 @@
 #include "global.h"
 #include "fsm_traffic_light.h"
 #include "fsm_manual.h"
+#include "ped_fsm.h"
+#include "ped_manual.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,6 +105,8 @@ int main(void)
   SCH_Init();
   SCH_Add_Task(fsm_traffic_light, 0, 10);
   SCH_Add_Task(fsm_manual_run, 0, 10);
+  SCH_Add_Task(ped_fsm, 0, 10);
+  SCH_Add_Task(pedestrian_manual_fsm, 0, 10);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
@@ -115,6 +119,7 @@ int main(void)
 	  HAL_Delay(1000);
 	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
 	  HAL_Delay(1000);
+
 
 //	  onYELLOW1();
 //	  onYELLOW2();
