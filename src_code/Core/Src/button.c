@@ -8,14 +8,15 @@
 #include "button.h"
 
 uint16_t pin_mode[4]={MODE_Pin,INC_Pin,SET_Pin,PET_BUT_Pin};
-uint16_t port_mode[4]={MODE_GPIO_Port,INC_GPIO_Port,SET_GPIO_Port,PET_BUT_GPIO_Port};
+GPIO_TypeDef* port_mode[4]={MODE_GPIO_Port,INC_GPIO_Port,SET_GPIO_Port,PET_BUT_GPIO_Port};
+
 int KeyReg0[NUM_BUTTON]={NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 int KeyReg1[NUM_BUTTON]={NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 int KeyReg2[NUM_BUTTON]={NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 int KeyReg3[NUM_BUTTON]={NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 
-int TimeOutForKeyPress[NUM_BUTTON] =  {200,200,200};
-int button_flag[NUM_BUTTON] = {0,0,0};
+int TimeOutForKeyPress[NUM_BUTTON] =  {200,200,200,200};
+int button_flag[NUM_BUTTON] = {0,0,0,0};
 
 int isButtonPressed(int num){
 	if(button_flag[num] == 1){
