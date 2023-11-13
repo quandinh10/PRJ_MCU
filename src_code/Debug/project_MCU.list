@@ -27,9 +27,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020064  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001134f  00000000  00000000  0002008d  2**0
+ 12 .debug_info   00011350  00000000  00000000  0002008d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000269b  00000000  00000000  000313dc  2**0
+ 13 .debug_abbrev 0000269b  00000000  00000000  000313dd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_aranges 00000d80  00000000  00000000  00033a78  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -319,9 +319,9 @@ void fsm_manual_run(){
  80002ea:	2201      	movs	r2, #1
  80002ec:	601a      	str	r2, [r3, #0]
 				onRED1();
- 80002ee:	f000 fc15 	bl	8000b1c <onRED1>
+ 80002ee:	f000 fc3d 	bl	8000b6c <onRED1>
 				onRED2();
- 80002f2:	f000 fc4f 	bl	8000b94 <onRED2>
+ 80002f2:	f000 fc6f 	bl	8000bd4 <onRED2>
  80002f6:	e001      	b.n	80002fc <fsm_manual_run+0x48>
 				offALL();
  80002f8:	f000 fc7c 	bl	8000bf4 <offALL>
@@ -491,9 +491,9 @@ void fsm_manual_run(){
  8000418:	2201      	movs	r2, #1
  800041a:	601a      	str	r2, [r3, #0]
 				onGREEN1();
- 800041c:	f000 fba6 	bl	8000b6c <onGREEN1>
+ 800041c:	f000 fb7e 	bl	8000b1c <onGREEN1>
 				onGREEN2();
- 8000420:	f000 fbd8 	bl	8000bd4 <onGREEN2>
+ 8000420:	f000 fbb8 	bl	8000b94 <onGREEN2>
  8000424:	e001      	b.n	800042a <fsm_manual_run+0x176>
 				offALL();
  8000426:	f000 fbe5 	bl	8000bf4 <offALL>
@@ -669,9 +669,9 @@ void fsm_traffic_light(){
 	case RED_GREEN:
 		//TODO
 		onRED1();
- 8000562:	f000 fadb 	bl	8000b1c <onRED1>
+ 8000562:	f000 fb03 	bl	8000b6c <onRED1>
 		onGREEN2();
- 8000566:	f000 fb35 	bl	8000bd4 <onGREEN2>
+ 8000566:	f000 fb15 	bl	8000b94 <onGREEN2>
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -728,7 +728,7 @@ void fsm_traffic_light(){
 	case RED_YELLOW:
 		//TODO
 		onRED1();
- 80005be:	f000 faad 	bl	8000b1c <onRED1>
+ 80005be:	f000 fad5 	bl	8000b6c <onRED1>
 		onYELLOW2();
  80005c2:	f000 faf7 	bl	8000bb4 <onYELLOW2>
 
@@ -795,9 +795,9 @@ void fsm_traffic_light(){
  8000626:	e065      	b.n	80006f4 <fsm_traffic_light+0x1dc>
 	case GREEN_RED:
 		onGREEN1();
- 8000628:	f000 faa0 	bl	8000b6c <onGREEN1>
+ 8000628:	f000 fa78 	bl	8000b1c <onGREEN1>
 		onRED2();
- 800062c:	f000 fab2 	bl	8000b94 <onRED2>
+ 800062c:	f000 fad2 	bl	8000bd4 <onRED2>
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -855,7 +855,7 @@ void fsm_traffic_light(){
 		onYELLOW1();
  8000682:	f000 fa5f 	bl	8000b44 <onYELLOW1>
 		onRED2();
- 8000686:	f000 fa85 	bl	8000b94 <onRED2>
+ 8000686:	f000 faa5 	bl	8000bd4 <onRED2>
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -1659,24 +1659,24 @@ __STATIC_FORCEINLINE void __disable_irq(void)
  8000b18:	e7fe      	b.n	8000b18 <Error_Handler+0x8>
 	...
 
-08000b1c <onRED1>:
+08000b1c <onGREEN1>:
  *      Author: dinhq
  */
 
 #include "physical.h"
 
-void onRED1(){
+void onGREEN1(){
  8000b1c:	b580      	push	{r7, lr}
  8000b1e:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, RESET);
  8000b20:	2200      	movs	r2, #0
  8000b22:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8000b26:	4805      	ldr	r0, [pc, #20]	; (8000b3c <onRED1+0x20>)
+ 8000b26:	4805      	ldr	r0, [pc, #20]	; (8000b3c <onGREEN1+0x20>)
  8000b28:	f001 f883 	bl	8001c32 <HAL_GPIO_WritePin>
 	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, SET);
  8000b2c:	2201      	movs	r2, #1
  8000b2e:	2108      	movs	r1, #8
- 8000b30:	4803      	ldr	r0, [pc, #12]	; (8000b40 <onRED1+0x24>)
+ 8000b30:	4803      	ldr	r0, [pc, #12]	; (8000b40 <onGREEN1+0x24>)
  8000b32:	f001 f87e 	bl	8001c32 <HAL_GPIO_WritePin>
 };
  8000b36:	bf00      	nop
@@ -1689,13 +1689,13 @@ void onRED1(){
 void onYELLOW1(){
  8000b44:	b580      	push	{r7, lr}
  8000b46:	af00      	add	r7, sp, #0
-	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, RESET);
- 8000b48:	2200      	movs	r2, #0
+	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, SET);
+ 8000b48:	2201      	movs	r2, #1
  8000b4a:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000b4e:	4805      	ldr	r0, [pc, #20]	; (8000b64 <onYELLOW1+0x20>)
  8000b50:	f001 f86f 	bl	8001c32 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, RESET);
- 8000b54:	2200      	movs	r2, #0
+	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, SET);
+ 8000b54:	2201      	movs	r2, #1
  8000b56:	2108      	movs	r1, #8
  8000b58:	4803      	ldr	r0, [pc, #12]	; (8000b68 <onYELLOW1+0x24>)
  8000b5a:	f001 f86a 	bl	8001c32 <HAL_GPIO_WritePin>
@@ -1706,19 +1706,19 @@ void onYELLOW1(){
  8000b64:	40010800 	.word	0x40010800
  8000b68:	40010c00 	.word	0x40010c00
 
-08000b6c <onGREEN1>:
-void onGREEN1(){
+08000b6c <onRED1>:
+void onRED1(){
  8000b6c:	b580      	push	{r7, lr}
  8000b6e:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, SET);
  8000b70:	2201      	movs	r2, #1
  8000b72:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8000b76:	4805      	ldr	r0, [pc, #20]	; (8000b8c <onGREEN1+0x20>)
+ 8000b76:	4805      	ldr	r0, [pc, #20]	; (8000b8c <onRED1+0x20>)
  8000b78:	f001 f85b 	bl	8001c32 <HAL_GPIO_WritePin>
 	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, RESET);
  8000b7c:	2200      	movs	r2, #0
  8000b7e:	2108      	movs	r1, #8
- 8000b80:	4803      	ldr	r0, [pc, #12]	; (8000b90 <onGREEN1+0x24>)
+ 8000b80:	4803      	ldr	r0, [pc, #12]	; (8000b90 <onRED1+0x24>)
  8000b82:	f001 f856 	bl	8001c32 <HAL_GPIO_WritePin>
 };
  8000b86:	bf00      	nop
@@ -1727,20 +1727,20 @@ void onGREEN1(){
  8000b8c:	40010800 	.word	0x40010800
  8000b90:	40010c00 	.word	0x40010c00
 
-08000b94 <onRED2>:
+08000b94 <onGREEN2>:
 
-void onRED2(){
+void onGREEN2(){
  8000b94:	b580      	push	{r7, lr}
  8000b96:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, RESET);
  8000b98:	2200      	movs	r2, #0
  8000b9a:	2120      	movs	r1, #32
- 8000b9c:	4804      	ldr	r0, [pc, #16]	; (8000bb0 <onRED2+0x1c>)
+ 8000b9c:	4804      	ldr	r0, [pc, #16]	; (8000bb0 <onGREEN2+0x1c>)
  8000b9e:	f001 f848 	bl	8001c32 <HAL_GPIO_WritePin>
 	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, SET);
  8000ba2:	2201      	movs	r2, #1
  8000ba4:	2110      	movs	r1, #16
- 8000ba6:	4802      	ldr	r0, [pc, #8]	; (8000bb0 <onRED2+0x1c>)
+ 8000ba6:	4802      	ldr	r0, [pc, #8]	; (8000bb0 <onGREEN2+0x1c>)
  8000ba8:	f001 f843 	bl	8001c32 <HAL_GPIO_WritePin>
 };
  8000bac:	bf00      	nop
@@ -1751,13 +1751,13 @@ void onRED2(){
 void onYELLOW2(){
  8000bb4:	b580      	push	{r7, lr}
  8000bb6:	af00      	add	r7, sp, #0
-	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, RESET);
- 8000bb8:	2200      	movs	r2, #0
+	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, SET);
+ 8000bb8:	2201      	movs	r2, #1
  8000bba:	2120      	movs	r1, #32
  8000bbc:	4804      	ldr	r0, [pc, #16]	; (8000bd0 <onYELLOW2+0x1c>)
  8000bbe:	f001 f838 	bl	8001c32 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, RESET);
- 8000bc2:	2200      	movs	r2, #0
+	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, SET);
+ 8000bc2:	2201      	movs	r2, #1
  8000bc4:	2110      	movs	r1, #16
  8000bc6:	4802      	ldr	r0, [pc, #8]	; (8000bd0 <onYELLOW2+0x1c>)
  8000bc8:	f001 f833 	bl	8001c32 <HAL_GPIO_WritePin>
@@ -1766,19 +1766,19 @@ void onYELLOW2(){
  8000bce:	bd80      	pop	{r7, pc}
  8000bd0:	40010c00 	.word	0x40010c00
 
-08000bd4 <onGREEN2>:
-void onGREEN2(){
+08000bd4 <onRED2>:
+void onRED2(){
  8000bd4:	b580      	push	{r7, lr}
  8000bd6:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, SET);
  8000bd8:	2201      	movs	r2, #1
  8000bda:	2120      	movs	r1, #32
- 8000bdc:	4804      	ldr	r0, [pc, #16]	; (8000bf0 <onGREEN2+0x1c>)
+ 8000bdc:	4804      	ldr	r0, [pc, #16]	; (8000bf0 <onRED2+0x1c>)
  8000bde:	f001 f828 	bl	8001c32 <HAL_GPIO_WritePin>
 	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, RESET);
  8000be2:	2200      	movs	r2, #0
  8000be4:	2110      	movs	r1, #16
- 8000be6:	4802      	ldr	r0, [pc, #8]	; (8000bf0 <onGREEN2+0x1c>)
+ 8000be6:	4802      	ldr	r0, [pc, #8]	; (8000bf0 <onRED2+0x1c>)
  8000be8:	f001 f823 	bl	8001c32 <HAL_GPIO_WritePin>
 };
  8000bec:	bf00      	nop

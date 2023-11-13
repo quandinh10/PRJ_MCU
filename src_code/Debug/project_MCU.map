@@ -3616,22 +3616,22 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000b10        0xa ./Core/Src/main.o
                 0x0000000008000b10                Error_Handler
  *fill*         0x0000000008000b1a        0x2 
- .text.onRED1   0x0000000008000b1c       0x28 ./Core/Src/physical.o
-                0x0000000008000b1c                onRED1
+ .text.onGREEN1
+                0x0000000008000b1c       0x28 ./Core/Src/physical.o
+                0x0000000008000b1c                onGREEN1
  .text.onYELLOW1
                 0x0000000008000b44       0x28 ./Core/Src/physical.o
                 0x0000000008000b44                onYELLOW1
- .text.onGREEN1
-                0x0000000008000b6c       0x28 ./Core/Src/physical.o
-                0x0000000008000b6c                onGREEN1
- .text.onRED2   0x0000000008000b94       0x20 ./Core/Src/physical.o
-                0x0000000008000b94                onRED2
+ .text.onRED1   0x0000000008000b6c       0x28 ./Core/Src/physical.o
+                0x0000000008000b6c                onRED1
+ .text.onGREEN2
+                0x0000000008000b94       0x20 ./Core/Src/physical.o
+                0x0000000008000b94                onGREEN2
  .text.onYELLOW2
                 0x0000000008000bb4       0x20 ./Core/Src/physical.o
                 0x0000000008000bb4                onYELLOW2
- .text.onGREEN2
-                0x0000000008000bd4       0x20 ./Core/Src/physical.o
-                0x0000000008000bd4                onGREEN2
+ .text.onRED2   0x0000000008000bd4       0x20 ./Core/Src/physical.o
+                0x0000000008000bd4                onRED2
  .text.offALL   0x0000000008000bf4       0x3c ./Core/Src/physical.o
                 0x0000000008000bf4                offALL
  .text.SCH_Init
@@ -4226,27 +4226,27 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x1134f
+.debug_info     0x0000000000000000    0x11350
  .debug_info    0x0000000000000000      0xd00 ./Core/Src/button.o
  .debug_info    0x0000000000000d00      0xb50 ./Core/Src/fsm_manual.o
  .debug_info    0x0000000000001850      0xb50 ./Core/Src/fsm_traffic_light.o
  .debug_info    0x00000000000023a0      0xbc2 ./Core/Src/global.o
- .debug_info    0x0000000000002f62     0x18ac ./Core/Src/main.o
- .debug_info    0x000000000000480e      0x2ab ./Core/Src/physical.o
- .debug_info    0x0000000000004ab9      0xb8b ./Core/Src/scheduler.o
- .debug_info    0x0000000000005644      0x27d ./Core/Src/software_timer.o
- .debug_info    0x00000000000058c1      0xec8 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_info    0x0000000000006789      0xa69 ./Core/Src/stm32f1xx_it.o
- .debug_info    0x00000000000071f2      0x2be ./Core/Src/system_stm32f1xx.o
- .debug_info    0x00000000000074b0       0x22 ./Core/Startup/startup_stm32f103rbtx.o
- .debug_info    0x00000000000074d2      0x76a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_info    0x0000000000007c3c      0xbdc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_info    0x0000000000008818      0x823 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_info    0x000000000000903b      0x701 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_info    0x000000000000973c      0x893 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_info    0x0000000000009fcf     0x2c12 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
- .debug_info    0x000000000000cbe1     0x157f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
- .debug_info    0x000000000000e160     0x31ef ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
+ .debug_info    0x0000000000002f62     0x18ad ./Core/Src/main.o
+ .debug_info    0x000000000000480f      0x2ab ./Core/Src/physical.o
+ .debug_info    0x0000000000004aba      0xb8b ./Core/Src/scheduler.o
+ .debug_info    0x0000000000005645      0x27d ./Core/Src/software_timer.o
+ .debug_info    0x00000000000058c2      0xec8 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_info    0x000000000000678a      0xa69 ./Core/Src/stm32f1xx_it.o
+ .debug_info    0x00000000000071f3      0x2be ./Core/Src/system_stm32f1xx.o
+ .debug_info    0x00000000000074b1       0x22 ./Core/Startup/startup_stm32f103rbtx.o
+ .debug_info    0x00000000000074d3      0x76a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_info    0x0000000000007c3d      0xbdc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_info    0x0000000000008819      0x823 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_info    0x000000000000903c      0x701 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_info    0x000000000000973d      0x893 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_info    0x0000000000009fd0     0x2c12 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_info    0x000000000000cbe2     0x157f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_info    0x000000000000e161     0x31ef ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
 
 .debug_abbrev   0x0000000000000000     0x269b
  .debug_abbrev  0x0000000000000000      0x252 ./Core/Src/button.o
