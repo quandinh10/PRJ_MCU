@@ -122,10 +122,10 @@ int main(void)
 		  onRED2();
 	  }
 
-//	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
-//	  HAL_Delay(1000);
-//	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
-//	  HAL_Delay(1000);
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
+	  HAL_Delay(1000);
+	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
