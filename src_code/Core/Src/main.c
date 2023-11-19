@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "global.h"
 #include "fsm_traffic_light.h"
 #include "fsm_manual.h"
 #include "ped_fsm.h"
@@ -101,15 +100,17 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  HAL_TIM_Base_Start_IT(&htim3);
-  SCH_Init();
-  SCH_Add_Task(fsm_traffic_light, 0, 10);
-  SCH_Add_Task(fsm_manual_run, 0, 10);
-  SCH_Add_Task(getKeyInput, 0, 10);
-
-  SCH_Add_Task(ped_fsm, 0, 10);
-  SCH_Add_Task(pedestrian_manual_fsm, 0, 10);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  SCH_Init();
+
+  //TASK INIT
+  SCH_Add_Task(timerRun, 0, 1);
+  SCH_Add_Task(getKeyInput, 0, 1);
+  SCH_Add_Task(fsm_traffic_light, 0, 1);
+  SCH_Add_Task(fsm_manual_run, 0, 1);
+  SCH_Add_Task(ped_fsm, 0, 1);
+  SCH_Add_Task(pedestrian_manual_fsm, 0, 1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,11 +118,6 @@ int main(void)
   while (1)
   {
 	  SCH_Dispatch_Tasks();
-	  if (isButtonPressed(0) == 1){
-		  onRED1();
-		  onRED2();
-	  }
-
 //	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
 //	  HAL_Delay(1000);
 //	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,100);
@@ -345,8 +341,6 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timerRun();
-//	getKeyInput();
 	SCH_Update();
 }
 /* USER CODE END 4 */
