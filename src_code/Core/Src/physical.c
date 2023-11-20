@@ -34,10 +34,10 @@ void onRED2(){
 };
 
 void offALL(){
-	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, SET);
-	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, SET);
-	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, SET);
-	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, SET);
+	HAL_GPIO_WritePin(LED1_1_GPIO_Port, LED1_1_Pin, RESET);
+	HAL_GPIO_WritePin(LED1_2_GPIO_Port, LED1_2_Pin, RESET);
+	HAL_GPIO_WritePin(LED2_1_GPIO_Port, LED2_1_Pin, RESET);
+	HAL_GPIO_WritePin(LED2_2_GPIO_Port, LED2_2_Pin, RESET);
 };
 
 //PED

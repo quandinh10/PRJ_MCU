@@ -101,22 +101,29 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  SCH_Init();
+//  SCH_Init();
 
   //TASK INIT
   SCH_Add_Task(timerRun, 0, 1);
   SCH_Add_Task(getKeyInput, 0, 1);
   SCH_Add_Task(fsm_traffic_light, 0, 1);
   SCH_Add_Task(fsm_manual_run, 0, 1);
-  SCH_Add_Task(ped_fsm, 0, 1);
-  SCH_Add_Task(pedestrian_manual_fsm, 0, 1);
-
+//  SCH_Add_Task(ped_fsm, 0, 1);
+//  SCH_Add_Task(pedestrian_manual_fsm, 0, 1);
+//  setTimer6(100);
+//  int test = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+//	  if (timer6_flag){
+//		  if (test) offALL();
+//		  else onRED1();
+//		  setTimer6(100);
+//		  test = 1 - test;
+//	  }
 	  SCH_Dispatch_Tasks();
 //	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,10);
 //	  HAL_Delay(1000);
@@ -183,9 +190,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 6399;
+  htim2.Init.Prescaler = 799;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 99;
+  htim2.Init.Period = 79;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -342,6 +349,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	SCH_Update();
+//	timerRun();
+//	getKeyInput();
 }
 /* USER CODE END 4 */
 

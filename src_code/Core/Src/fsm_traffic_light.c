@@ -40,6 +40,18 @@ void fsm_traffic_light(){
 			setTimer1(y_val*100);
 			led_status = RED_YELLOW;
 		}
+
+		if (isButtonPressed(0)){
+			offALL();
+			led_status = RED_MAN;
+			setTimer5(1);
+
+			timerRoad1 = r_val;
+			timerRoad2 = 2;
+
+			//reset button flag
+			resetButton();
+		}
 		break;
 	case RED_YELLOW:
 		//TODO
@@ -62,6 +74,18 @@ void fsm_traffic_light(){
 			setTimer1(g_val*100);
 			led_status = GREEN_RED;
 		}
+
+		if (isButtonPressed(0)){
+			offALL();
+			led_status = RED_MAN;
+			setTimer5(1);
+
+			timerRoad1 = r_val;
+			timerRoad2 = 2;
+
+			//reset button flag
+			resetButton();
+		}
 		break;
 	case GREEN_RED:
 		if (allowed){
@@ -81,6 +105,18 @@ void fsm_traffic_light(){
 		if(timer1_flag == 1){
 			setTimer1(y_val*100);
 			led_status = YELLOW_RED;
+		}
+
+		if (isButtonPressed(0)){
+			offALL();
+			led_status = RED_MAN;
+			setTimer5(1);
+
+			timerRoad1 = r_val;
+			timerRoad2 = 2;
+
+			//reset button flag
+			resetButton();
 		}
 		break;
 	case YELLOW_RED:
@@ -103,20 +139,32 @@ void fsm_traffic_light(){
 			setTimer1(g_val*100);
 			led_status = RED_GREEN;
 		}
+
+		if (isButtonPressed(0)){
+			offALL();
+			led_status = RED_MAN;
+			setTimer5(1);
+
+			timerRoad1 = r_val;
+			timerRoad2 = 2;
+
+			//reset button flag
+			resetButton();
+		}
 		break;
 	default:
 		break;
 	}
-	//check mode (timer5 for toogle LED)
-	if (isButtonPressed(0) == 1 && (led_status == RED_GREEN || led_status == RED_YELLOW || led_status == GREEN_RED || led_status == YELLOW_RED)){
-		offALL();
-		led_status = RED_MAN;
-		setTimer5(1);
-
-		timerRoad1 = r_val;
-		timerRoad2 = 2;
-
-		//reset button flag
-		resetButton();
-	}
+//	//check mode (timer5 for toogle LED)
+//	if (isButtonPressed(0) == 1 && (led_status == RED_GREEN || led_status == RED_YELLOW || led_status == GREEN_RED || led_status == YELLOW_RED)){
+//		offALL();
+//		led_status = RED_MAN;
+//		setTimer5(1);
+//
+//		timerRoad1 = r_val;
+//		timerRoad2 = 2;
+//
+//		//reset button flag
+//		resetButton();
+//	}
 }
