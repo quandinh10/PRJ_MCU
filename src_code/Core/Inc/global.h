@@ -49,6 +49,6 @@ extern int allowed;
 extern int sig;
 extern int buzzerFlag;
 
-
+extern TIM_HandleTypeDef htim3;
 
 #endif /* INC_GLOBAL_H_ */
