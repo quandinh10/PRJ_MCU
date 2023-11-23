@@ -22,10 +22,8 @@ void fsm_traffic_light(){
 		break;
 	case RED_GREEN:
 		//TODO
-		if (allowed){
-			onRED1();
-			onGREEN2();
-		}
+		onRED1();
+		onGREEN2();
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -55,10 +53,9 @@ void fsm_traffic_light(){
 		break;
 	case RED_YELLOW:
 		//TODO
-		if (allowed){
-			onRED1();
-			onYELLOW2();
-		}
+		onRED1();
+		onYELLOW2();
+
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -88,10 +85,9 @@ void fsm_traffic_light(){
 		}
 		break;
 	case GREEN_RED:
-		if (allowed){
-			onGREEN1();
-			onRED2();
-		}
+		onGREEN1();
+		onRED2();
+
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -120,10 +116,8 @@ void fsm_traffic_light(){
 		}
 		break;
 	case YELLOW_RED:
-		if (allowed){
-			onYELLOW1();
-			onRED2();
-		}
+		onYELLOW1();
+		onRED2();
 
 		//decrement of counter of each road
 		if (timer2_flag == 1){
@@ -155,16 +149,4 @@ void fsm_traffic_light(){
 	default:
 		break;
 	}
-//	//check mode (timer5 for toogle LED)
-//	if (isButtonPressed(0) == 1 && (led_status == RED_GREEN || led_status == RED_YELLOW || led_status == GREEN_RED || led_status == YELLOW_RED)){
-//		offALL();
-//		led_status = RED_MAN;
-//		setTimer5(1);
-//
-//		timerRoad1 = r_val;
-//		timerRoad2 = 2;
-//
-//		//reset button flag
-//		resetButton();
-//	}
 }

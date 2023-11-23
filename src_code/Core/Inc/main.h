@@ -66,8 +66,6 @@ void Error_Handler(void);
 #define MODE_GPIO_Port GPIOA
 #define INC_Pin GPIO_PIN_4
 #define INC_GPIO_Port GPIOA
-#define Buzzer_Pin GPIO_PIN_6
-#define Buzzer_GPIO_Port GPIOA
 #define SET_Pin GPIO_PIN_0
 #define SET_GPIO_Port GPIOB
 #define PET_LED_1_Pin GPIO_PIN_10
