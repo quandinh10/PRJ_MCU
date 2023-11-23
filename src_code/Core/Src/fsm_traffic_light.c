@@ -21,12 +21,6 @@ void fsm_traffic_light(){
 		setTimer2(100);
 		break;
 	case RED_GREEN:
-		//TODO
-		if (allowed){
-			onRED1();
-			onGREEN2();
-		}
-
 		//decrement of counter of each road
 		if (timer2_flag == 1){
 			setTimer2(100);
@@ -54,12 +48,6 @@ void fsm_traffic_light(){
 		}
 		break;
 	case RED_YELLOW:
-		//TODO
-		if (allowed){
-			onRED1();
-			onYELLOW2();
-		}
-
 		//decrement of counter of each road
 		if (timer2_flag == 1){
 			setTimer2(100);
@@ -88,11 +76,6 @@ void fsm_traffic_light(){
 		}
 		break;
 	case GREEN_RED:
-		if (allowed){
-			onGREEN1();
-			onRED2();
-		}
-
 		//decrement of counter of each road
 		if (timer2_flag == 1){
 			setTimer2(100);
@@ -120,11 +103,6 @@ void fsm_traffic_light(){
 		}
 		break;
 	case YELLOW_RED:
-		if (allowed){
-			onYELLOW1();
-			onRED2();
-		}
-
 		//decrement of counter of each road
 		if (timer2_flag == 1){
 			setTimer2(100);

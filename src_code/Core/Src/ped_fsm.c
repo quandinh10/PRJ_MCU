@@ -10,13 +10,18 @@
 void ped_fsm(){
 	switch(led_status){
 	case RED_GREEN:
-		pedGreen();
+		if (sig == PED_ON){
+			pedGreen();
+			buzzerFlag = 1;
+		}
 		break;
 	case GREEN_RED:
-		pedRed();
+		buzzerFlag = 0;
+		if (sig == PED_ON) pedRed();
 		break;
 	case YELLOW_RED:
-		pedRed();
+		buzzerFlag = 0;
+		if (sig == PED_ON) pedRed();
 		break;
 	default:
 		break;
