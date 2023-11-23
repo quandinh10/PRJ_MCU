@@ -27,8 +27,7 @@
 
 #define RED 15
 #define GREEN 16
-#define RED_PED_MAN 17
-#define GREEN_PED_MAN 18
+#define PED_ON 17
 #define WAIT 19
 
 extern int led_status;
