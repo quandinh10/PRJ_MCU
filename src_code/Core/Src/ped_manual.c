@@ -11,6 +11,7 @@
 // Change sig name later
 // Traffic ped status
 void pedestrian_manual_fsm(){
+	if (led_status == RED_MAN || led_status == GREEN_MAN || led_status == YELLOW_MAN) return;
 	switch (sig){
 	case WAIT:
 		// 3 for PED 1

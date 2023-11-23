@@ -13,6 +13,7 @@ void ped_fsm(){
 		if (sig == PED_ON){
 			pedGreen();
 			buzzerFlag = 1;
+			setTimer3(50);
 		}
 		break;
 	case GREEN_RED:

@@ -26,7 +26,6 @@
 #include "fsm_manual.h"
 #include "ped_fsm.h"
 #include "ped_manual.h"
-
 #include "buzzer.h"
 /* USER CODE END Includes */
 
@@ -112,6 +111,7 @@ int main(void)
   SCH_Add_Task(fsm_manual_run, 0, 1);
   SCH_Add_Task(ped_fsm, 0, 1);
   SCH_Add_Task(pedestrian_manual_fsm, 0, 1);
+  SCH_Add_Task(startBuzzer, 0, 1);
 //  setTimer6(100);
 //  int test = 0;
   /* USER CODE END 2 */
