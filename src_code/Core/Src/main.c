@@ -26,6 +26,8 @@
 #include "fsm_manual.h"
 #include "ped_fsm.h"
 #include "ped_manual.h"
+
+#include "buzzer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

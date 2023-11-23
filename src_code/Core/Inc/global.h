@@ -49,6 +49,6 @@ extern int timerRoad2;
 extern int allowed;
 extern int sig;
 
-
+extern TIM_HandleTypeDef htim3;
 
 #endif /* INC_GLOBAL_H_ */
