@@ -24,3 +24,4 @@ int toogleFlag=0;
 
 int allowed = 1;
 int sig = WAIT;
+int pedFlag = 0;
