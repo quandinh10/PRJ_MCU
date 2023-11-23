@@ -20,8 +20,10 @@ void pedestrian_manual_fsm(){
 		}
 		break;
 	case PED_ON:
-		ped_fsm();
-		if (timer8_flag) sig = WAIT;
+		if (timer8_flag){
+			sig = WAIT;
+			buzzerFlag = 0;
+		}
 	default:
 		break;
 	}

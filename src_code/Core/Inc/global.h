@@ -48,7 +48,7 @@ extern int timerRoad2;
 //ped purpose
 extern int allowed;
 extern int sig;
-extern int pedFlag;
+extern int buzzerFlag;
 
 
 
