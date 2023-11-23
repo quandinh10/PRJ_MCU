@@ -27,7 +27,8 @@
 
 #define RED 15
 #define GREEN 16
-#define PED_ON 17
+#define OFF 17
+#define PED_ON 18
 #define WAIT 19
 
 extern int led_status;
@@ -45,9 +46,10 @@ extern int timerRoad1;
 extern int timerRoad2;
 
 //ped purpose
-extern int allowed;
+extern int mul;
 extern int sig;
 extern int buzzerFlag;
+extern int ped_status;
 
 extern TIM_HandleTypeDef htim3;
 

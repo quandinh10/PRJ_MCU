@@ -22,5 +22,5 @@ void offALL();
 
 void pedGreen();
 void pedRed();
-
+void pedOff();
 #endif /* INC_PHYSICAL_H_ */

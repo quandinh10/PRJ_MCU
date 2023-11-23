@@ -11,20 +11,34 @@
 // Change sig name later
 // Traffic ped status
 void pedestrian_manual_fsm(){
-	if (led_status == RED_MAN || led_status == GREEN_MAN || led_status == YELLOW_MAN) return;
-	switch (sig){
-	case WAIT:
-		// 3 for PED 1
-		if (isButtonPressed(3)){
-			sig = PED_ON;
-			setTimer8(1000);
-		}
+//	switch (sig){
+//	case WAIT:
+//		pedOff();
+//		if (isButtonPressed(3)){
+//			sig = PED_ON;
+//		}
+//		break;
+//	case PED_ON:
+//		if (timer8_flag){
+//			sig = WAIT;
+//			buzzerFlag = 0;
+//		}
+//	default:
+//		break;
+//	}
+	switch(led_status){
+	case RED_GREEN:
+		ped_status = GREEN;
 		break;
-	case PED_ON:
-		if (timer8_flag){
-			sig = WAIT;
-			buzzerFlag = 0;
-		}
+	case RED_YELLOW:
+		ped_status = GREEN;
+		break;
+	case GREEN_RED:
+		ped_status = RED;
+		break;
+	case YELLOW_RED:
+		ped_status = RED;
+		break;
 	default:
 		break;
 	}

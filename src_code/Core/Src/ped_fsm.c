@@ -8,24 +8,20 @@
 #include "ped_fsm.h"
 
 void ped_fsm(){
-	switch(led_status){
-	case RED_GREEN:
-		if (sig == PED_ON){
-			pedGreen();
-			buzzerFlag = 1;
-			setTimer3(50);
-		}
+	if (isButtonPressed(3)) pedestrian_manual_fsm();
+	switch(ped_status){
+	case OFF:
+		pedOff();
+		__HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,0);
 		break;
-	case GREEN_RED:
-		buzzerFlag = 0;
-		if (sig == PED_ON) pedRed();
+	case RED:
+		pedRed();
+		if (led_status == RED_GREEN || led_status == RED_YELLOW) ped_status = GREEN;
 		break;
-	case YELLOW_RED:
-		buzzerFlag = 0;
-		if (sig == PED_ON) pedRed();
-		break;
-	default:
+	case GREEN:
+		startBuzzer();
+		pedGreen();
+		if (led_status == GREEN_RED || led_status == YELLOW_RED) ped_status = OFF;
 		break;
 	}
 }
-

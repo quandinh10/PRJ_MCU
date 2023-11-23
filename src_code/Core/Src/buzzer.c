@@ -10,13 +10,12 @@
 //extern int r_val;
 //int timerRoad1;
 void startBuzzer(){
-	if(buzzerFlag){
-		//chay
-	__HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,(1-(timerRoad1/r_val)*100));
-	if(timer3_flag==1)
-		setTimer3((timerRoad1/r_val)*500);
-	__HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,0);
-	if(timer3_flag==1)
-		setTimer3((timerRoad1/r_val)*500);
+	if(timer3_flag){
+		int temp = (1-(double)(timerRoad1/r_val))*mul;
+		mul+=5;
+		if (sig) __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,temp);
+		else __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,0);
+		sig = 1 - sig;
+		setTimer3(5);
 	}
 }
