@@ -13,7 +13,9 @@
 #include "button.h"
 #include "physical.h"
 #include "scheduler.h"
-
+#include "uart.h"
+#include <string.h>
+#include <stdio.h>
 //fsm
 #define INIT 0
 #define RED_GREEN 1
@@ -52,5 +54,5 @@ extern int buzzerFlag;
 extern int ped_status;
 
 extern TIM_HandleTypeDef htim3;
-
+extern UART_HandleTypeDef huart2;
 #endif /* INC_GLOBAL_H_ */

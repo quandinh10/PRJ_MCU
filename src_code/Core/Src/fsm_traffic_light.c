@@ -47,7 +47,6 @@ void fsm_traffic_light(){
 
 			timerRoad1 = r_val;
 			timerRoad2 = 2;
-
 			//reset button flag
 			resetButton();
 		}
