@@ -50,6 +50,11 @@ void fsm_traffic_light(){
 			//reset button flag
 			resetButton();
 		}
+
+		if (isButtonPressed(1)){
+			led_status = RED_GREEN_NO_TIME;
+		}
+
 		break;
 	case RED_YELLOW:
 		onRED1();
@@ -81,6 +86,10 @@ void fsm_traffic_light(){
 			//reset button flag
 			resetButton();
 		}
+		if (isButtonPressed(1)){
+			led_status = RED_YELLOW_NO_TIME;
+		}
+
 		break;
 	case GREEN_RED:
 		onGREEN1();
@@ -108,9 +117,14 @@ void fsm_traffic_light(){
 			timerRoad1 = r_val;
 			timerRoad2 = 2;
 
-			//reset button flag
+			//reset button flags
 			resetButton();
 		}
+
+		if (isButtonPressed(1)){
+			led_status = GREEN_RED_NO_TIME;
+		}
+
 		break;
 	case YELLOW_RED:
 		onYELLOW1();
@@ -142,6 +156,11 @@ void fsm_traffic_light(){
 			//reset button flag
 			resetButton();
 		}
+
+		if (isButtonPressed(1)){
+			led_status = YELLOW_RED_NO_TIME;
+		}
+
 		break;
 	default:
 		break;

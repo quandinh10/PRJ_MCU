@@ -33,6 +33,11 @@
 #define PED_ON 18
 #define WAIT 19
 
+#define RED_GREEN_NO_TIME 25
+#define RED_YELLOW_NO_TIME 27
+#define GREEN_RED_NO_TIME 26
+#define YELLOW_RED_NO_TIME 28
+
 extern int led_status;
 extern int r_val;
 extern int g_val;
