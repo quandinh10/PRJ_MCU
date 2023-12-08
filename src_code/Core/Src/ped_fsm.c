@@ -16,7 +16,7 @@ void ped_fsm(){
 		break;
 	case RED:
 		pedRed();
-		if (led_status == RED_GREEN || led_status == RED_YELLOW) ped_status = GREEN;
+		//if (led_status == RED_GREEN || led_status == RED_YELLOW) ped_status = GREEN;
 		break;
 	case GREEN:
 		startBuzzer();
